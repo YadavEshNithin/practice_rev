@@ -1,17 +1,29 @@
 #!/bin/bash
 
+# USERID=$(id -u)
+# R="\e[31m"
+# G="\e[32m"
+# Y="\e[33m"
+# N="\e[0m"
+
+# LOGS_FILE="/var/log/shell_scripting_logs"
+# SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
+# LOGS_FOLDER="$LOGS_FILE/$SCRIPT_NAME.log"
+
+# mkdir -p $LOGS_FILE
+# echo "we have successfully logs folder created" | tee -a $LOGS_FOLDER
+
 USERID=$(id -u)
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
-
-LOGS_FILE="/var/log/shell_scripting_logs"
+LOGS_FOLDER="/var/log/shellscript-logs"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
-LOGS_FOLDER="$LOGS_FILE/$SCRIPT_NAME.log"
+LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 
-mkdir -p $LOGS_FILE
-echo "we have successfully logs folder created" | tee -a $LOGS_FOLDER
+mkdir -p $LOGS_FOLDER
+echo "Script started executing at: $(date)" | tee -a $LOG_FILE
 
 if [ $USERID -eq 0 ]
 then
