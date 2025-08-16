@@ -10,12 +10,18 @@
 
 
 # source=$(find . -name "*.sh" -mmin +60)
-source="my file name"
+# source="my file name"
 
-echo "$source"
+# echo "$source"
 
-while  read -r filename
+# while  read -r filename
+# do
+#     echo "$filename"
+# done <<< $source
+
+#!/bin/bash
+file_list="C:\Users\Documents\notes.txt"
+while read -r filepath
 do
-    echo "$filename"
-done <<< $source
-
+  echo "---$filepath---"
+done <<< "$file_list"
