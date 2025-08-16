@@ -21,6 +21,16 @@ else
     exit 1
 fi
 
+VALIDATE(){
+    if [$1 -eq 0]
+    then
+        echo "$2 install success" | tee -a $LOGS_FOLDER
+    else
+        echo "$2 install failure" | tee -a $LOGS_FOLDER
+        exit 1
+    fi
+}
+
 dnf list installed mysql 
 
 if [ $? -eq 0 ]
@@ -29,11 +39,5 @@ then
 else
     echo "mysql is not installed...installing now" | tee -a $LOGS_FOLDER
     dnf install mysql -y
-    if [$? -eq 0]
-    then
-        echo "mysql install success" | tee -a $LOGS_FOLDER
-    else
-        echo "mysql install failure" | tee -a $LOGS_FOLDER
-        exit 1
-    fi
+    VALIDATE $? "mysql"
 fi
