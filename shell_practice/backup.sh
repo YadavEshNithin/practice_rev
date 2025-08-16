@@ -54,7 +54,7 @@ then
 else
     echo "files are found...now zipping files are: $Files"
     Zipfiles="$DEST_DIR/app-logs.zip"
-    find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ "$Zipfiles"
+    echo $Files | zip -@ "$Zipfiles"
 
     if [ -f $Zipfiles ]
     then 
@@ -65,5 +65,7 @@ else
             echo "deleting the files after backup"
             rm -rf $filename
         done <<< $Files
+    else
+        echo "Zip creation failure"
     fi
 fi
