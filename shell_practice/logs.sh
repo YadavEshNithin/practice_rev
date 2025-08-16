@@ -1,0 +1,38 @@
+#!/bin/bash
+
+USERID=$(id -u)
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
+
+LOGS_FILE="/var/log/shell_scripting.log/"
+SCRIPT_NAME=$($0 | cut -d "." -f1)
+LOGS_FOLDER=$LOGS_FILE/$SCRIPT_NAME
+
+mkdir -p $LOGS_FOLDER
+echo "we have successfully logs folder created" | tee -a $LOGS_FOLDER
+
+if [ $USERID -eq 0 ]
+then
+    echo "You are running with root access" | tee -a $LOGS_FOLDER
+else
+    echo "Please run with root access" | tee -a $LOGS_FOLDER
+    exit 1
+fi
+
+dnf list installed mysql 
+
+if [$? -eq 0 ]
+then
+    echo "mysql already installed...nothing to do" | tee -a $LOGS_FOLDER
+else
+    echo "mysql is not installed...installing now" | tee -a $LOGS_FOLDER
+    dnf install mysql -y
+    if [$? -eq 0]
+    then
+        echo "mysql install success" | tee -a $LOGS_FOLDER
+    else
+        echo "mysql install failure" | tee -a $LOGS_FOLDER
+    fi
+fi
