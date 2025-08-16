@@ -38,10 +38,10 @@ FILES_TO_DELETE=$(find $SOURCE_DIR -name "*.log" -mmin +1)
 
 echo $FILES_TO_DELETE
 
-# while IFS= read -r filepath
-# do
-#     echo "Deleting file: $filepath" | tee -a $LOG_FILE
-#     rm -rf $filepath
-# done <<< $FILES_TO_DELETE
+while IFS= read -r filepath
+do
+    echo "Deleting file: $filepath" | tee -a $LOG_FILE
+    rm -rf $filepath
+done <<< $FILES_TO_DELETE
 
-# echo "Script executed successfully"
+echo "Script executed successfully"
