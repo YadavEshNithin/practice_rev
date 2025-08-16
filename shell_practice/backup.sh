@@ -65,4 +65,5 @@ else
             echo "deleting the files after backup"
             rm -rf $filename
         done <<< $Files
+    fi
 fi
