@@ -54,7 +54,7 @@ then
 else
     echo "files are found...now zipping files are: $Files"
     Zipfiles="$DEST_DIR/app-logs.zip"
-    $Files | zip -@ "$Zipfiles"
+    find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ "$Zipfiles"
 
     if [ -f $Zipfiles ]
     then 
