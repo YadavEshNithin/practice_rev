@@ -46,7 +46,7 @@ then
     exit 1
 fi
 
-Files=$( find $SOURCE_DIR -name "*.log" -mtime+$DAYS )
+Files=$( find $SOURCE_DIR -name "*.log" -mtime +$DAYS )
 
 if [ -z $Files ]
 then
