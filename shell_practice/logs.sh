@@ -34,5 +34,6 @@ else
         echo "mysql install success" | tee -a $LOGS_FOLDER
     else
         echo "mysql install failure" | tee -a $LOGS_FOLDER
+        exit 1
     fi
 fi
