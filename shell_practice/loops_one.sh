@@ -45,5 +45,14 @@ fi
 
 for i in ${PACKAGES[@]}
 do
-    echo "$i"
+    dnf list installed $i 
+
+    if [ $? -eq 0 ]
+    then
+        echo "$i  already installed...nothing to do" | tee -a $LOGS_FOLDER
+    else
+        echo "$i  is not installed...installing now" | tee -a $LOGS_FOLDER
+        dnf install $i  -y
+        VALIDATE $? "$i"
+    fi
 done
