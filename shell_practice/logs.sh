@@ -6,7 +6,7 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-LOGS_FILE="/var/log/shell_scripting.log/"
+LOGS_FILE="/var/log/shell_scripting.log"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOGS_FOLDER=$LOGS_FILE/$SCRIPT_NAME
 
