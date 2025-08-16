@@ -66,4 +66,3 @@ else
             rm -rf $filename
         done <<< $Files
 fi
-
