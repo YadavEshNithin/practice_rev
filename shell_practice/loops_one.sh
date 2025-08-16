@@ -6,7 +6,7 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-LOGS_FILE="/var/log/shell_scripting_logs//"
+LOGS_FILE="/var/log/shell_scripting_logs"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOGS_FOLDER="$LOGS_FILE/$SCRIPT_NAME.log"
 PACKAGES=("mysql" "nginx" "python")
@@ -23,7 +23,7 @@ else
 fi
 
 VALIDATE(){
-    if [ $1 -eq 0 ]
+    if [$1 -eq 0 ]
     then
         echo -e "$G...$2 install success $N..." | tee -a $LOGS_FOLDER
     else
