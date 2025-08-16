@@ -40,13 +40,7 @@ fi
 
 check_root
 
-if [ ! -d SOURCE_DIR ]
-then
-    echo "the provided source dir does not exist"
-    exit 1
-fi
-
-if [ ! -d DEST_DIR ]
+if [ ! -d $$DEST_DIR ]
 then
     echo "the provided destination dir does not exist"
     exit 1
