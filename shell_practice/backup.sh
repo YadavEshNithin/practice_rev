@@ -16,6 +16,7 @@ check_root(){
         echo "You are running with root access"
     else
         echo "Please run with the root access"
+        exit 1
     fi
 }
 
@@ -29,6 +30,7 @@ VALIDATE(){
 }
 USAGE(){
     echo "error: the usage is sh backup.sh <source-dir> <dest-dir> days(optional)"
+    exit 1
 }
 
 if [ $# -lt 2 ]
@@ -38,14 +40,16 @@ fi
 
 check_root
 
-if [ !-d SOURCE_DIR ]
+if [ ! -d SOURCE_DIR ]
 then
     echo "the provided source dir does not exist"
+    exit 1
 fi
 
-if [ !-d DEST_DIR ]
+if [ ! -d DEST_DIR ]
 then
     echo "the provided destination dir does not exist"
+    exit 1
 fi
 
 Files=$( find $SOURCE_DIR -name "*.log" -mtime+$DAYS )
