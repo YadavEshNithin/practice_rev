@@ -53,6 +53,7 @@ then
     echo "not found files older than 14 days...skipping"
 else
     echo "files are found...now zipping files are: $Files"
+    echo $Files
     TIMESTAMP=$( date +%F-%H-%M-%S )
     Zipfiles="$DEST_DIR/app-logs-$TIMESTAMP.zip"
     echo $Files | zip -@ "$Zipfiles"
