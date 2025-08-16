@@ -64,10 +64,11 @@ else
 
         while IFS= read -r filename
         do
-            echo "deleting the files after backup"
+            echo "deleting the files after backup : $filename "
             rm -rf $filename
         done <<< $Files
     else
         echo "Zip creation failure"
+        exit 1
     fi
 fi
