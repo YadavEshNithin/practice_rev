@@ -9,7 +9,7 @@ N="\e[0m"
 LOGS_FILE="/var/log/shell_scripting_logs"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOGS_FOLDER="$LOGS_FILE/$SCRIPT_NAME.log"
-PACKAGES=("mysql" "nginx")
+PACKAGES=("mysql" "nginx" "python")
 
 mkdir -p $LOGS_FILE
 echo "we have successfully logs folder created" | tee -a $LOGS_FOLDER
