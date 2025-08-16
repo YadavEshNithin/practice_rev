@@ -25,9 +25,9 @@ fi
 VALIDATE(){
     if [ $1 -eq 0 ]
     then
-        echo "$G...$2 install success $N..." | tee -a $LOGS_FOLDER
+        echo -e "$G...$2 install success $N..." | tee -a $LOGS_FOLDER
     else
-        echo "$R...$2 install failure $N..." | tee -a $LOGS_FOLDER
+        echo -e "$R...$2 install failure $N..." | tee -a $LOGS_FOLDER
         exit 1
     fi
 }
