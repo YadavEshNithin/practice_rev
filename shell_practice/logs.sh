@@ -23,7 +23,7 @@ fi
 
 dnf list installed mysql 
 
-if [$? -eq 0 ]
+if [ $? -eq 0 ]
 then
     echo "mysql already installed...nothing to do" | tee -a $LOGS_FOLDER
 else
