@@ -1,4 +1,4 @@
-# #!/bin/bash
+#!/bin/bash
 
 # USERID=$(id -u)
 # R="\e[31m"
@@ -58,7 +58,6 @@
 # done
 
 
-#!/bin/bash
 
 USERID=$(id -u)
 R="\e[31m"
