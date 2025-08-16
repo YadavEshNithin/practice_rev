@@ -34,14 +34,14 @@ VALIDATE(){
 echo "Script started executing at $(date)" | tee -a $LOG_FILE
 
 # FILES_TO_DELETE=$(find $SOURCE_DIR -name "*.log" -mtime +14)
-FILES_TO_DELETE="C:\Users\Documents\notes.txt"
+FILES_TO_DELETE=$(find $SOURCE_DIR -name "*.log")
 
 echo $FILES_TO_DELETE
 
 while IFS= read  filepath
 do
     echo "Deleting file: $filepath" | tee -a $LOG_FILE
-    # rm -rf $filepath
+    rm -rf $filepath
 done <<< $FILES_TO_DELETE
 
 echo "Script executed successfully"
