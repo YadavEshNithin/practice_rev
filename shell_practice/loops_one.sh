@@ -43,7 +43,7 @@ else
     VALIDATE $? "mysql"
 fi
 
-for i in {PACKAGES[@]}
+for i in ${PACKAGES[@]}
 do
     echo "$i"
 done
