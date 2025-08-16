@@ -32,27 +32,27 @@ VALIDATE(){
     fi
 }
 
-dnf list installed mysql 
+# dnf list installed mysql 
 
-if [ $? -eq 0 ]
-then
-    echo "mysql already installed...nothing to do" | tee -a $LOGS_FOLDER
-else
-    echo "mysql is not installed...installing now" | tee -a $LOGS_FOLDER
-    dnf install mysql -y
-    VALIDATE $? "mysql"
-fi
+# if [ $? -eq 0 ]
+# then
+#     echo "mysql already installed...nothing to do" | tee -a $LOGS_FOLDER
+# else
+#     echo "mysql is not installed...installing now" | tee -a $LOGS_FOLDER
+#     dnf install mysql -y
+#     VALIDATE $? "mysql"
+# fi
 
-# for i in ${PACKAGES[@]}
-# do
-#     dnf list installed $i 
+for i in ${PACKAGES[@]}
+do
+    dnf list installed $i 
 
-#     if [ $? -eq 0 ]
-#     then
-#         echo "$i  already installed...nothing to do" | tee -a $LOGS_FOLDER
-#     else
-#         echo "$i  is not installed...installing now" | tee -a $LOGS_FOLDER
-#         dnf install $i  -y
-#         VALIDATE $? "$i"
-#     fi
-# done
+    if [ $? -eq 0 ]
+    then
+        echo "$i  already installed...nothing to do" | tee -a $LOGS_FOLDER
+    else
+        echo "$i  is not installed...installing now" | tee -a $LOGS_FOLDER
+        dnf install $i  -y
+        VALIDATE $? "$i"
+    fi
+done
