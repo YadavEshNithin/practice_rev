@@ -33,12 +33,14 @@ USAGE(){
     exit 1
 }
 
+check_root
+
+
 if [ $# -lt 2 ]
 then
     USAGE
 fi
 
-check_root
 
 if [ ! -d $DEST_DIR ]
 then
