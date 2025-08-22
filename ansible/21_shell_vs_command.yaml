@@ -1,6 +1,5 @@
 - name: shell_vs_command
-  hosts: local
-  connection: local
+  hosts: frontend_test
   tasks:
   - name: shell_exec
     ansible.builtin.shell: "ls -lrt > /tmp/output.txt"
