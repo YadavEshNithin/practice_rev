@@ -1,0 +1,15 @@
+- name: play control conditions_demo ansible_facts
+  hosts: local
+  connection: local
+  tasks:
+  - name: ansible_facts_conditions_dnf
+    ansible.builtin.dnf:
+      name: nginx
+      state: present
+    when: ansible_os_family == "RedHat"
+    
+  - name: ansible_facts_conditions_debian
+    ansible.builtin.dnf:
+      name: nginx
+      state: present
+    when: ansible_os_family == "Debian"
