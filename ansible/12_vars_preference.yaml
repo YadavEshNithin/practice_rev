@@ -1,0 +1,17 @@
+- name: vars_preference
+  hosts: local
+  connection: local
+  vars:
+    Greetings: "play_greetings"
+  vars_file:
+  - course.yaml
+  vars_prompt:
+  - name: prompt_greetings
+    prompt: please the prompt level greetings
+    private: false
+  tasks:
+  - name: vars_preference
+    vars:
+      Greetings: "tasks_greetings"
+    ansible.builtin.debug:
+      msg: "{{ Greetings }}"
