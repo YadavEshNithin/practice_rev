@@ -24,9 +24,9 @@
   - name: convert list into map
     vars:
       course:
-      - {'name':'ansible'}
-      - {'duration':'10HR'}
-      - {'trainer':'sivakumar'}
+      - {'key': 'name', 'value': 'ansible'}
+      - {'key': 'duration', 'value': '10HR'}
+      - {'key': 'trainer', 'value': 'sivakumar'}
     ansible.builtin.debug:
       msg: "Course Info: {{ course | items2dict  }}"
 
