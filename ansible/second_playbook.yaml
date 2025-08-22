@@ -4,4 +4,4 @@
   tasks:
   - name: printing hellow world msg
     ansible.builtin.debug:
-    msg: "hello_world"
+      msg: "hello_world"
