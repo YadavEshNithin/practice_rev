@@ -5,7 +5,7 @@
   - name: ansible_facts
     ansible.builtin.debug:
       msg: "hello {{ item }}"
-    loops:
+    loop:
     - suresh
     - nagavamsi
     - viswaprasad
