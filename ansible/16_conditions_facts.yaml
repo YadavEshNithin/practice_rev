@@ -6,7 +6,7 @@
   - name: ansible_facts_conditions_dnf
     ansible.builtin.dnf:
       name: nginx
-      state: absent
+      state: present
     when: ansible_os_family == "RedHat"
 
   - name: ansible_facts_conditions_debian
