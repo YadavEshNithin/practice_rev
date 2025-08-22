@@ -9,3 +9,7 @@
   - name: printing the info with play_vars
     ansible.builtin.debug:
       msg: "hello {{ TRAINER }} sir, i joined {{ COURSE }} with {{ DURATION }} time"
+      
+  - name: printing the info again with play_vars
+    ansible.builtin.debug:
+      msg: "hello {{ TRAINER }} sir, i joined {{ COURSE }} with {{ DURATION }} time"
