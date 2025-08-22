@@ -1,0 +1,6 @@
+- name: local_inventory_vars
+  hosts: frontend
+  tasks:
+  - name: local_inventory_vars
+    ansible.builtin.debug:
+      msg: "hello {{ TRAINER }} i joined {{ COURSE }} with {{ DURATION }}"
