@@ -1,6 +1,6 @@
 - name: loops
   hosts: local
-  connection: local|
+  connection: local
   become: yes
   tasks:
   - name: loops_names
