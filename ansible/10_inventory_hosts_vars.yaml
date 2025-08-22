@@ -1,5 +1,5 @@
 - name: local_inventory_vars
-  hosts: frontend_test
+  hosts: frontend
   tasks:
   - name: local_inventory_vars
     ansible.builtin.debug:
