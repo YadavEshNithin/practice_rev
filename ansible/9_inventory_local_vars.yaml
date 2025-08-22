@@ -1,0 +1,7 @@
+- name: local_inventory_vars
+  hosts: local
+  connection: local
+  tasks:
+  - name: local_inventory_vars
+    ansible.builtin.debug:
+      msg: "hello {{ TRAINER }} i joined {{ COURSE }} with {{ DURATION }}"
