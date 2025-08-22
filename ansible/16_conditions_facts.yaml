@@ -7,10 +7,10 @@
     ansible.builtin.dnf:
       name: nginx
       state: present
-    when: ansible_distribution == "RedHat"
+    when: ansible_os_family == "RedHat"
 
   - name: ansible_facts_conditions_debian
     ansible.builtin.dnf:
       name: nginx
       state: present
-    when: ansible_distribution == "Debian"
+    when: ansible_os_family == "Debian"
