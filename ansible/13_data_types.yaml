@@ -6,9 +6,9 @@
     DURATION: 120
     IS_LIVE: true
     TOOLS:
-    - "Linux"
-    - "shell scripting"
-    - "Ansible"
+    - Linux
+    - shell scripting
+    - Ansible
     CONCETPS:
      CI: "jenkins"
      Scripting: "Terraform, Ansible, shell, python"
