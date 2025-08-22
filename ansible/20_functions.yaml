@@ -28,7 +28,7 @@
       - {'duration':'10HR'}
       - {'trainer':'sivakumar'}
     ansible.builtin.debug:
-      msg: "{{ course *** Course Info: {{ course | items2dict  }}}} "
+      msg: "{{ course }} *** Course Info: {{ course | items2dict  }}"
 
   - name: convert to uppercase
     vars:
