@@ -1,6 +1,5 @@
 - name: dynamic_frontend
-  hosts: local
-  connection: local
+  hosts: dynamic_frontend
   serial: 5
   become: yes
   tasks:
