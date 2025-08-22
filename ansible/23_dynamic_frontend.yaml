@@ -1,7 +1,6 @@
 - name: dynamic_frontend
   hosts: dynamic_frontend
   # serial: 5
-  fork : 5
   become: yes
   tasks:
   - name: nginx install
