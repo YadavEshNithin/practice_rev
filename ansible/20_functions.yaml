@@ -24,11 +24,11 @@
   - name: convert list into map
     vars:
       course:
-      - {'name', 'ansible'}
-      - {'duration', '10HR'}
-      - {'trainer', 'sivakumar'}
+      - {'name':'ansible'}
+      - {'duration':'10HR'}
+      - {'trainer':'sivakumar'}
     ansible.builtin.debug:
-      msg: "{{ course }} --- Course Info: {{ course | items2dict  }}"
+      msg: "{{ course }} "
 
   - name: convert to uppercase
     vars:
