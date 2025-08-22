@@ -1,0 +1,11 @@
+- name: play_vars
+  hosts: local
+  connection: local
+  vars:
+    COURSE: "devsecops"
+    TRAINER: "siva sir"
+    DURATION: "120hrs"
+  tasks:
+  - name: printing the info with play_vars
+    ansible.builtin.debug:
+      msg: "hello {{ TRAINER }} sir, i joined {{ COURSE }} with {{ DURATION }} time"
