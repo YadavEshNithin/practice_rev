@@ -1,7 +1,7 @@
-- name: variables from inventory
+- name: local_inventory_vars
   hosts: local
   connection: local
   tasks:
-  - name: print course info
+  - name: local_inventory_vars
     ansible.builtin.debug:
-      msg: "Hello I am learning {{ COURSE }}, Duration: {{ DURATION }}, Trainer is: {{ TRAINER }}"
+      msg: "hello {{ TRAINER }} i joined {{ COURSE }} with {{ DURATION }}"
