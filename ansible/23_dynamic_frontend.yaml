@@ -1,14 +1,15 @@
 - name: dynamic_frontend
   hosts: dynamic_frontend
-  serial: 5
+  # serial: 5
+  fork : 5
   become: yes
   tasks:
   - name: nginx install
     ansible.builtin.package:
       name: nginx
-      state: absent
+      state: present
 
-  # - name: start the service
-  #   ansible.builtin.service:
-  #     name: nginx
-  #     state: started
+  - name: start the service
+    ansible.builtin.service:
+      name: nginx
+      state: started
