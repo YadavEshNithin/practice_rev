@@ -1,0 +1,26 @@
+- name: data_types
+  hosts: local
+  connection: local
+  vars:
+    Greetings: "play_greetings"
+    DURATION: 120
+    IS_LIVE: true
+    TOOLS:
+    - "Linux"
+    - "shell scripting"
+    - "Ansible"
+    CONCETPS:
+     CI: "jenkins"
+     Scripting: "Terraform, Ansible, shell, python"
+  
+  tasks:
+  - name: vars_preference
+    # vars:
+    #   Greetings: "tasks_greetings"
+    ansible.builtin.debug:
+       msg: "Course is: {{ COURSE }}, Duration: {{ DURATION }}, is live?: {{ IS_LIVE }}, Tools are: {{ TOOLS }}, Concepts are: {{ CONCETPS }}"
+
+
+ 
+
+
