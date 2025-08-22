@@ -1,21 +1,21 @@
-- name: shell_vs_command
-  hosts: local
-  connection: local
+- name: shell vs command
+  hosts: frontend
   tasks:
-  - name: shell_exec
-    ansible.builtin.shell: "ls -lrt > /tmp/output.txt"
+  - name: redirect ls output to a file
+    #ansible.builtin.command: "ls -ltr > /tmp/output.txt"
+    ansible.builtin.shell: "ls -ltr > /tmp/output.txt"
     register: command_result
 
-  - name: print_shell_result
+  - name: print the outcome
     ansible.builtin.debug:
       msg: "{{ command_result }}"
 
-  - name: command_exec
-    ansible.builtin.command: "ls -lrt"
-    register: command_result
+  - name: redirect ls output to a file using command
+    ansible.builtin.command: "ls -ltr"
+    #ansible.builtin.shell: "ls -ltr > /tmp/output.txt"
+    register: command_output
+  
+  - name: print the output
+    ansible.builtin.debug:
+      msg: "{{ command_output }}"
 
-  - name: print_command_result
-    #ansible.builtin.command: "ls -ltr > /tmp/output.txt"
-    ansible.builtin.debug: 
-      msg: "{{ command_result }}"
-    
