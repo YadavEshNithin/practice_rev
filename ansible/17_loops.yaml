@@ -2,11 +2,12 @@
   hosts: local
   connection: local
   tasks:
-  - name: print names
+  - name: loops_names
     ansible.builtin.debug:
-      msg: "Hello, {{ item }}" #item here is reserved keyword
+      msg: "hello {{ item }}"
     loop:
-    - Suresh
-    - Ramesh
-    - Joseph
-    - Raheem
+    - suresh
+    - nagavamsi
+    - viswaprasad
+    - arka
+    - Dvv
