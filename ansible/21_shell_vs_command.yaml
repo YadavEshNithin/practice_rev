@@ -11,10 +11,10 @@
 
   - name: command_exec
     ansible.builtin.command: "ls -lrt"
-    register: command_result
+    register: command_output
 
   - name: print_command_result
     #ansible.builtin.command: "ls -ltr > /tmp/output.txt"
     ansible.builtin.debug: 
-      msg: "{{ command_result }}"
+      msg: "{{ command_output }}"
     
