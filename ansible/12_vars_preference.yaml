@@ -5,10 +5,10 @@
     Greetings: "play_greetings"
   # vars_files:
   # - course.yaml
-  vars_prompt:
-  - name: Greetings
-    prompt: please the prompt level greetings
-    private: false
+  # vars_prompt:
+  # - name: Greetings
+  #   prompt: please the prompt level greetings
+  #   private: false
   tasks:
   - name: vars_preference
     # vars:
