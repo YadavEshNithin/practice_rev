@@ -7,7 +7,11 @@
   - name: number is less than
     ansible.builtin.debug:
       msg: "hello this {{ Number }} is less than 100"
+    when:
+      Number <= 100
 
   - name: number is greater than
     ansible.builtin.debug:
       msg: "hello this {{ Number }} is greater than 100"
+    when:
+      Number > 100
