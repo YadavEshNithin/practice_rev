@@ -1,0 +1,5 @@
+- name: first_playbook_ping
+  hosts: frontend
+  tasks:
+  - name: ping_frontend
+    ansible.builtin.ping:
