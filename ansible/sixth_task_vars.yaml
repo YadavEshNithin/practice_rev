@@ -1,0 +1,17 @@
+- name: tasks_vars
+  hosts: local
+  connection: local
+  vars:
+    COURSE: "devsecops"
+    TRAINER: "siva sir"
+    DURATION: "120hrs"
+  tasks:
+  - name: printing the info with play_vars
+    vars:
+      COURSE: "devops_with_siva"
+    ansible.builtin.debug:
+      msg: "hello {{ TRAINER }} sir, i joined {{ COURSE }} with {{ DURATION }} time"
+      
+  - name: printing the info again with play_vars
+    ansible.builtin.debug:
+      msg: "hello {{ TRAINER }} sir, i joined {{ COURSE }} with {{ DURATION }} time"
