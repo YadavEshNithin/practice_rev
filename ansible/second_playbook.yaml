@@ -1,6 +1,5 @@
 - name: hello_world_yaml
   hosts: frontend
-  connection: local
   tasks:
   - name: printing hellow world msg
     ansible.builtin.debug:
