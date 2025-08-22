@@ -17,7 +17,7 @@
   - name: first_task
     ansible.builtin.debug:
       msg: "first_task, first_play"
-  - name: second_play
+  - name: second_task
     ansible.builtin.debug:
       msg: "second_task, first_play_play"
     
