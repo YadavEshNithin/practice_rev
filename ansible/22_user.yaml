@@ -7,7 +7,7 @@
     register: output
     ignore_errors: true
 
-  - name: user_not_exists
+  - name: user_not_exists_add
     become: yes
     ansible.builtin.command: useradd roboshop
     when: output.rc != 0
