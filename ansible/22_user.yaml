@@ -13,6 +13,6 @@
     when: output.rc != 0
 
   - name: user already exist 
-    become: yes
-    ansible.builtin.command: userdel roboshop
+    ansible.builtin.debug:
+      msg: "user already exist"
     when: output.rc == 0
