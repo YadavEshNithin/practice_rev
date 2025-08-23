@@ -8,6 +8,7 @@
     ignore_errors: true
 
   - name: user_not_exists
+    become: yes
     ansible.builtin.command: useradd roboshop
     when: output != 0
 
