@@ -10,7 +10,7 @@
   - name: user_not_exists
     become: yes
     ansible.builtin.command: useradd roboshop
-    when: output != 0
+    when: output.rc != 0
 
   - name: user already exist 
     ansible.builtin.debug:
