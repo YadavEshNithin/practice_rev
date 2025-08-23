@@ -12,3 +12,16 @@
     ansible.builtin.service:
       name: nginx
       state: started
+
+
+
+# 🔑 Main Difference
+
+# forks → Concurrency of task execution across hosts.
+
+# (How many hosts can run the same task in parallel.)
+
+
+# serial → Batching of hosts for the entire play.
+
+# (How many hosts complete all tasks before moving to the next batch.)
